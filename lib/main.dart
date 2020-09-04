@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 
 import 'assignmentbutton.dart';
+import 'assignmenttext.dart';
 
 void main() {
   runApp(AssignmentApp());
@@ -18,7 +19,7 @@ class AssignmentApp extends StatefulWidget {
 }
 
 class _AssignmentAppState extends State<AssignmentApp> {
-  final _BUTTON_TITLE = "Click me 😁";
+  final _buttonTitle = "Click me 😁";
   var _titles = const ["first title", "second title", "third title"];
   var currentIndex = 0;
 
@@ -43,7 +44,10 @@ class _AssignmentAppState extends State<AssignmentApp> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [AssignmentButton(_BUTTON_TITLE, _updateButtonText)],
+        children: [
+          AssignmentButton(_buttonTitle, _updateButtonText),
+          AssignmentText(_titles[currentIndex]),
+        ],
       ),
     ));
   }
